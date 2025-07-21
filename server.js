@@ -1,14 +1,18 @@
 'use strict';
 require('dotenv').config();
+
 const express     = require('express');
 const bodyParser  = require('body-parser');
 const cors        = require('cors');
+const connectDB   = require('./src/config/db');
 
 const apiRoutes         = require('./routes/api.js');
 const fccTestingRoutes  = require('./routes/fcctesting.js');
 const runner            = require('./test-runner');
 
 const app = express();
+
+connectDB();
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
@@ -47,7 +51,10 @@ app.use(function(req, res, next) {
 });
 
 //Start our server and tests!
-const listener = app.listen(process.env.PORT || 3000, function () {
+
+const PORT = process.env.PORT || 5000;
+
+const listener = app.listen(PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
   if(process.env.NODE_ENV==='test') {
     console.log('Running Tests...');
