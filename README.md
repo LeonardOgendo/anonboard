@@ -1,3 +1,3 @@
-# Anonymous Message Board
+## Anonymous Message Board
 
-This is the boilerplate for the Anonymous Message Board project. Instructions for completing your project can be found at https://www.freecodecamp.org/learn/information-security/information-security-projects/anonymous-message-board
+Anonymous Message Board, part of the freeCodeCamp InfoSec Curriculum. Covers basic CRUD, and security best practices in Node.js
