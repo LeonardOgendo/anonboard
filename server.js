@@ -2,6 +2,7 @@
 require('dotenv').config();
 
 const express     = require('express');
+const helmet      = require('helmet');
 const bodyParser  = require('body-parser');
 const cors        = require('cors');
 const connectDB   = require('./src/config/db');
@@ -12,11 +13,24 @@ const runner            = require('./test-runner');
 
 const app = express();
 
+// Connect to MongoDB
 connectDB();
 
+// Apply security HTTP headers
+app.use(helmet());
+
+app.use(
+  helmet({
+    referrerPolicy: { policy: 'same-origin' },
+  })
+);
+
+
+// Static assets
 app.use('/public', express.static(process.cwd() + '/public'));
 
-app.use(cors({origin: '*'})); //For FCC testing purposes only
+// Allow cross-origin requests for FCC testing only
+app.use(cors({origin: '*'}));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
