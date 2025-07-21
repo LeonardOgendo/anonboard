@@ -17,7 +17,6 @@ A secure, modular, and production-ready anonymous message board built with Node.
 - 📦 Built using feature-based architecture (SOLID-principled)
 - 🌐 Exposes a clean REST API for frontend or external use
 - 🛡 Hardened with secure headers, input sanitization, and rate limiting
-- ⚙️ Ready for cloud deployment on platforms like Railway, Render, or Fly.io
 
 ---
 
@@ -44,8 +43,8 @@ A secure, modular, and production-ready anonymous message board built with Node.
 ## 📦 Status
 
 - ✅ Legacy FCC version complete and passing tests
-- 🔧 Refactoring underway into modular fullstack app
-- 🔜 Frontend integration + production deployment coming soon
+-  Refactoring underway into modular fullstack app
+-  Frontend integration + production deployment coming soon
 
 ---
 
